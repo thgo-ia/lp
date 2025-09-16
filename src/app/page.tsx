@@ -131,7 +131,7 @@ export default function Home() {
           opacity: showStickyButton ? 1 : 0 
         }}
         transition={{ duration: 0.3 }}
-        className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-[80]"
+        className="fixed left-1/2 transform -translate-x-1/2 z-[80] bottom-[calc(env(safe-area-inset-bottom,0px)+88px)] md:bottom-6"
       >
         <div className="relative">
           <div className="pointer-events-none absolute -inset-4 rounded-full bg-gradient-to-r from-[hsl(var(--brand-1))] to-[hsl(var(--brand-2))] opacity-30 blur-2xl" />
@@ -150,7 +150,7 @@ export default function Home() {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 2, duration: 0.5 }}
-        className="fixed bottom-6 right-6 z-50"
+        className="fixed right-4 md:right-6 z-50 bottom-4 md:bottom-6"
       >
         <Button
           onClick={handleWhatsAppClick}
@@ -169,7 +169,7 @@ export default function Home() {
         initial={{ scale: 0 }}
         animate={{ scale: showScrollTop ? 1 : 0 }}
         transition={{ duration: 0.3 }}
-        className="fixed bottom-6 left-6 z-50"
+        className="fixed left-4 md:left-6 z-50 bottom-[calc(env(safe-area-inset-bottom,0px)+24px)] md:bottom-6"
       >
         <Button
           onClick={scrollToTop}

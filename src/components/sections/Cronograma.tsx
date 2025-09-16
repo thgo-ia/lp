@@ -26,7 +26,7 @@ export default function Cronograma() {
       <div className="relative h-[240vh] md:h-[220vh]">
         <div className="sticky top-0 z-20">
           {/* Conteúdo centralizado na viewport */}
-          <div className="container mx-auto px-4 min-h-screen py-24 flex flex-col items-center justify-center" ref={ref}>
+          <div className="container mx-auto px-4 min-h-screen pt-20 pb-[calc(env(safe-area-inset-bottom,0px)+120px)] md:py-24 flex flex-col items-center justify-center" ref={ref}>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -58,9 +58,9 @@ export default function Cronograma() {
               >
                 <div ref={timelineRef} className="relative bg-white text-gray-900 rounded-3xl p-4 md:p-6 supports-[backdrop-filter]:backdrop-blur-md">
                 {/* Barra lateral verde animada (sem scroll progress) */}
-                <div className="pointer-events-none absolute left-8 top-6 bottom-6 w-px bg-gray-200/60"></div>
+                <div className="pointer-events-none absolute left-6 md:left-8 top-6 bottom-6 w-px bg-gray-200/60"></div>
                 <motion.div
-                  className="pointer-events-none absolute left-8 top-6 w-px origin-top bg-gradient-to-b from-emerald-400 to-emerald-600"
+                  className="pointer-events-none absolute left-6 md:left-8 top-6 w-px origin-top bg-gradient-to-b from-emerald-400 to-emerald-600"
                   style={{ height: "calc(100% - 3rem)" }}
                   initial={{ scaleY: 0 }}
                   animate={{ scaleY: [0, 1] }}
@@ -73,15 +73,15 @@ export default function Cronograma() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                       transition={{ duration: 0.5, delay: i * 0.05 + 0.2 }}
-                      className="relative pl-14 md:pl-16 py-5"
+                      className="relative pl-12 md:pl-16 py-5"
                     >
                       {/* Marcador */}
                       <span
-                        className={`absolute left-8 top-1/2 -translate-y-1/2 h-3.5 w-3.5 rounded-full ring-4 ring-white shadow ${
+                        className={`absolute left-6 md:left-8 top-1/2 -translate-y-1/2 h-3.5 w-3.5 rounded-full ring-4 ring-white shadow ${
                           ([0, 3] as number[]).includes(i) ? "bg-emerald-400" : "bg-emerald-600"
                         }`}
                       />
-                      <div className="grid grid-cols-[90px_1fr] gap-4">
+                      <div className="grid grid-cols-[72px_1fr] md:grid-cols-[90px_1fr] gap-4">
                         <time className="font-semibold text-gray-900">{item.horario}</time>
                         <p className="text-gray-700">{item.atividade}</p>
                       </div>
