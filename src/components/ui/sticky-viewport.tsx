@@ -7,7 +7,7 @@ type StickyViewportProps = PropsWithChildren<{
   zIndex?: number;
 }>;
 
-export default function StickyViewport({ heightVh = 140, zIndex = 10, children }: StickyViewportProps) {
+export default function StickyViewport({ heightVh = 180, zIndex = 10, children }: StickyViewportProps) {
   return (
     <section className="relative" style={{ height: `${heightVh}vh` }}>
       <div className="sticky top-0" style={{ zIndex }}>

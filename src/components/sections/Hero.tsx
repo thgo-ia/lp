@@ -17,20 +17,11 @@ export default function Hero() {
   
 
   return (
-    <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section id="hero" className="relative h-[110vh] md:h-screen flex items-center justify-center overflow-hidden bg-[#0B1220]">
       {/* Background Video/Image */}
       <div className="absolute inset-0">
-        <video
-          className="w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/hero-poster.jpg"
-        >
-          <source src="/hero-placeholder.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/80"></div>
+        <div className="w-full h-full bg-[radial-gradient(120%_80%_at_50%_40%,#0b1220_0%,#0b1220_60%,#07101d_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0b1220]/40 via-[#0b1220]/30 to-[#07101d]/85"></div>
         {/* Vignette radial suave */}
         <div
           className="absolute inset-0 pointer-events-none"
@@ -58,7 +49,9 @@ export default function Hero() {
               fontSize: "clamp(48px, 12vw, 180px)",
             }}
           >
-            Do Caos à Precisão
+            Do Caos à
+            <br />
+            Precisão
           </motion.div>
           {/* Fill layer with blend */}
           <motion.div
@@ -70,7 +63,9 @@ export default function Hero() {
               fontSize: "clamp(48px, 12vw, 180px)",
             }}
           >
-            Do Caos à Precisão
+            Do Caos à
+            <br />
+            Precisão
           </motion.div>
         </div>
       </div>
@@ -95,7 +90,7 @@ export default function Hero() {
       </div>
 
       <div className="container mx-auto px-3 relative z-10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:items-end min-h-[80vh]">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:items-end min-h-[85vh] md:min-h-[80vh]">
           {/* Left: Title + Progress + CTA */}
           <div className="lg:col-span-6 flex flex-col justify-end min-h-[60vh] self-end pb-6 pl-0">
             {/* Progress */}
@@ -164,7 +159,7 @@ export default function Hero() {
                   O SEU PROPÓSITO
                 </span>
               </p>
-              <div className="mt-4 text-sm text-white/70">[EmptyView] Inserir imagem/vídeo hero final</div>
+              
             </motion.div>
           </div>
         </div>

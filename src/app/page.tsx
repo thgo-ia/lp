@@ -93,13 +93,13 @@ export default function Home() {
       <Header />
       
       {/* Hero preso (pinned). */}
-      <StickyViewport heightVh={200} zIndex={1}>
+      <StickyViewport heightVh={220} zIndex={1}>
         <Hero />
       </StickyViewport>
       {/* Próxima seção sobe por cima do Hero */}
       <div className="relative z-10 -mt-[100vh]"><Caminho /></div>
       {/* O que eu posso fazer: pinned */}
-      <StickyViewport heightVh={200} zIndex={2}>
+      <StickyViewport heightVh={220} zIndex={2}>
         <OQuePossoFazer />
       </StickyViewport>
       {/* Persona + Conteúdo sobem juntas sobre OQuePossoFazer, sem sticky, mesmo background */}

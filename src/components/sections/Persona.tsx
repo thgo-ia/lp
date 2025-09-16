@@ -116,7 +116,7 @@ export default function Persona() {
               </li>
             ))}
           </ul>
-          <div className="mt-6 text-center text-sm text-gray-600">[EmptyView] Botão rolar para seção de preço</div>
+          
         </motion.div>
       </div>
     </section>

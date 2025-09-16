@@ -23,7 +23,7 @@ export default function Cronograma() {
 
   return (
     <section id="cronograma" className="py-0 relative overflow-visible bg-gradient-to-b from-black via-slate-950 to-blue-950 text-white">
-      <div className="relative h-[200vh]">
+      <div className="relative h-[240vh] md:h-[220vh]">
         <div className="sticky top-0 z-20">
           {/* Conteúdo centralizado na viewport */}
           <div className="container mx-auto px-4 min-h-screen py-24 flex flex-col items-center justify-center" ref={ref}>

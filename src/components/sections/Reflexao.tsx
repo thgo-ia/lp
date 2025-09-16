@@ -27,7 +27,7 @@ export default function Reflexao() {
           <p className="text-gray-600">
             66% dos trabalhadores consideraram deixar seus empregos nos últimos 3 meses. Empresas com equipes engajadas têm 21% mais lucratividade. O que você vai decidir?
           </p>
-          <div className="mt-6 text-sm text-gray-600">[EmptyView] Botão rolar para seção preço</div>
+          
         </motion.div>
       </div>
     </section>
