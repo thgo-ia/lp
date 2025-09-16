@@ -37,7 +37,7 @@ export default function Caminho() {
       icon: AlertTriangle,
       title: "Quiet quitting tem cura",
       body:
-        "75% relataram quiet quitting. Com propósito claro, metas vivas e liderança estratégica, o 'básico' vira proatividade.",
+        "75% relataram quiet quitting. Com propósito claro, metas vivas e liderança estratégica, o ‘básico’ vira proatividade.",
       source: "Fonte: Índice Engaja S/A 2024",
     },
     {

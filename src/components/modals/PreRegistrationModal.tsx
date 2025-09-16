@@ -13,7 +13,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { X, ArrowRight, ArrowLeft, CheckCircle, User, Building, Phone, Mail, DollarSign, MessageSquare } from "lucide-react";
+import { X, ArrowRight, ArrowLeft, CheckCircle, User, Users, Building, Phone, Mail, DollarSign, MessageSquare } from "lucide-react";
 
 // Schemas for form validation
 const phase1Schema = z.object({
