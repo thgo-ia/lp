@@ -13,7 +13,8 @@ const pricingTiers = [
   {
     id: 1,
     name: "Presencial (Itajaí-SC)",
-    subtitle: "Lote Zero - Apenas 4 vagas",
+    lotLabel: "Lote Zero",
+    slotNote: "Apenas 4 vagas",
     originalPrice: 497,
     currentPrice: 129.97,
     discount: 74,
@@ -35,7 +36,8 @@ const pricingTiers = [
   {
     id: 2,
     name: "Online (Ao vivo)",
-    subtitle: "Lote Zero - Apenas 36 vagas",
+    lotLabel: "Lote Zero",
+    slotNote: "Apenas 36 vagas",
     originalPrice: 197,
     currentPrice: 29.90,
     discount: 85,
@@ -81,8 +83,14 @@ export default function Pricing() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            <AuroraText className="font-extrabold">Preço Especial de Lançamento</AuroraText> – Lote Zero
+            <AuroraText className="font-extrabold">Preço Especial de Lançamento</AuroraText>
           </h2>
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-gray-900 text-white shadow">
+              <span className="w-2 h-2 rounded-full bg-secondary"></span>
+              Lote Zero
+            </span>
+          </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
             Não precisa ser muito experiente para saber: uma consultoria desse porte custaria R$ 15.000 a R$ 25.000.
           </p>
@@ -104,10 +112,10 @@ export default function Pricing() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
-                className={`group relative transition-all duration-300 ${!isAvailable ? 'opacity-60' : ''}`}
+                className={`group relative transition-all duration-300 h-full ${!isAvailable ? 'opacity-60' : ''}`}
               >
                 <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-br from-primary/50 via-accent/40 to-secondary/50 opacity-60 blur-[2px] group-hover:opacity-90 transition" />
-                <div className="relative rounded-3xl bg-white/80 backdrop-blur-xl border border-white/40 shadow-xl p-8">
+                <div className="relative rounded-3xl bg-white/80 backdrop-blur-xl border border-white/40 shadow-xl p-8 h-full flex flex-col">
                   {/* Badges */}
                   <div className="absolute -top-4 left-4">
                     {tier.popular ? (
@@ -121,19 +129,28 @@ export default function Pricing() {
                   {/* Header */}
                   <div className="text-center mb-8">
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">{tier.name}</h3>
-                    <p className="text-gray-600 mb-4">{tier.subtitle}</p>
+                    <div className="flex items-center justify-center gap-2 mb-4">
+                      <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-bold bg-gray-900 text-white">
+                        <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                        {tier.lotLabel}
+                      </span>
+                      <span className="text-[12px] font-medium text-gray-600">{tier.slotNote}</span>
+                    </div>
                     
                     {/* Price */}
                     <div className="mb-4">
-                      <span className="text-gray-500 line-through text-base">
-                        R$ {tier.originalPrice.toLocaleString('pt-BR')}
-                      </span>
-                      <div className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+                      <div className="text-5xl font-extrabold text-gray-900 leading-tight">
                         R$ {tier.currentPrice.toLocaleString('pt-BR')}
                       </div>
-                      <span className="inline-block mt-2 bg-gradient-to-r from-primary to-secondary text-white px-3 py-1 rounded-full text-xs font-semibold shadow">
+                      <span className="inline-block mt-1 text-gray-500 line-through text-base">
+                        R$ {tier.originalPrice.toLocaleString('pt-BR')}
+                      </span>
+                      <span className="inline-block mt-2 bg-gray-900 text-white px-3 py-1 rounded-full text-xs font-semibold shadow">
                         {tier.discount}% OFF
                       </span>
+                      <div className="mt-2 text-sm text-gray-600">
+                        Você economiza R$ {(tier.originalPrice - tier.currentPrice).toLocaleString('pt-BR')}
+                      </div>
                     </div>
 
                     {/* Slots Progress */}
@@ -157,7 +174,7 @@ export default function Pricing() {
                   </div>
 
                   {/* Features */}
-                  <div className="mb-8">
+                  <div className="mb-8 pt-6 border-t border-gray-100">
                     <h4 className="font-semibold text-gray-900 mb-4">O que está incluso:</h4>
                     <ul className="space-y-3">
                       {tier.features.map((feature, featureIndex) => (
@@ -191,10 +208,10 @@ export default function Pricing() {
                   <Button
                     onClick={() => handleCTAClick(tier.name)}
                     disabled={!isAvailable}
-                    className={`w-full py-4 text-lg font-semibold rounded-xl transition-all duration-300 ${
-                      tier.popular || isCurrentLot
-                        ? 'bg-gradient-to-r from-primary to-secondary hover:brightness-105 text-white shadow-lg hover:shadow-xl transform hover:scale-105'
-                        : 'bg-gray-900 hover:bg-gray-800 text-white'
+                    className={`mt-auto w-full py-4 text-lg font-semibold rounded-xl transition-all duration-300 text-white ${
+                      isAvailable
+                        ? 'bg-gradient-to-r from-[hsl(var(--brand-1))] to-[hsl(var(--brand-2))] hover:brightness-105 shadow-lg hover:shadow-xl transform hover:scale-105'
+                        : 'bg-gray-400'
                     } ${!isAvailable ? 'opacity-50 cursor-not-allowed' : ''}`}
                   >
                     {!isAvailable ? (
